@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "a90e87d9-bb98-404a-bdf0-957489b2e3ae",
+		"name": "december-lab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2643106",
+		"_collection_link": "https://julianr92.postman.co/workspace/Codetria~00960901-c4a3-436f-b101-81f73a351f0e/collection/2643106-a90e87d9-bb98-404a-bdf0-957489b2e3ae?action=share&creator=2643106&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"russoj92@gmail.com\",\r\n    \"password\": \"Julian123$\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transfer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzIyNDhjNS0xYjIzLTRjMTItOTg2Yy1kNTYwODA4OWE2NDUiLCJpYXQiOjE2ODU1OTE5MzMsImV4cCI6MTY4NTU5NTUzM30.Cue-D7w7XlQ7uJlvevKidV87I80TOFHKWAtyeBR1IoM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountFrom\": \"8941fc83-82a1-42f5-b9dd-3ae733d6cdcd\",\r\n    \"accountTo\": \"88e8b8f7-6a28-44fe-8c50-c812724500c2\",\r\n    \"amount\": \"1000\",\r\n    \"date\": \"1684626179\",\r\n    \"description\": \"Desc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/v1/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transactions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzIyNDhjNS0xYjIzLTRjMTItOTg2Yy1kNTYwODA4OWE2NDUiLCJpYXQiOjE2ODU2MjI0NDAsImV4cCI6MTY4NTYyNjA0MH0.YUAz5KuT26ML4z8ylCGkOE1CNQBl3zQfFieZZkBFelg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/v1/transactions?pageSize=5&cursor=9cf6ce31-8d78-46ed-8621-99ce2a963e21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2023-05-20",
+							"disabled": true
+						},
+						{
+							"key": "to",
+							"value": "2023-05-24",
+							"disabled": true
+						},
+						{
+							"key": "sourceAccountID",
+							"value": "88e8b8f7-6a28-44fe-8c50-c812724500c2",
+							"disabled": true
+						},
+						{
+							"key": "pageSize",
+							"value": "5"
+						},
+						{
+							"key": "cursor",
+							"value": "9cf6ce31-8d78-46ed-8621-99ce2a963e21"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
